@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add owner</title>
+</head>
+<body>
+<form action="#"
+      th:method="${owner.id > 0 ? 'put' : 'post'}"
+      th:action="${'/owners' + (owner.id > 0 ? '/' + owner.id.toString() : '')}"
+      th:object="${owner}">
+    <label for="firstName"> First name: </label>
+        <input id="firstName"th:field="*{firstName}/>
+     <label for="lastName"> Last name: </label>
+        <input id="lastName" th:field="*{firstName}/>
+     <label for="address"> Address: </label>
+       <input id="address"th:field="*{firstName}/>
+    <label for="city"> City: </label>
+       <input id="city" th:field="*{firstName}/>
+     <label for="telephon"> Telephon: </label>
+       <input id="telephon" th:field="*{firstName}/>
+
+
+    <input type="button" id="submit" value="Submit"/>
+    <input type="button" id="Reset" value="Reset form"/>
+    <a href="/owners">Back</a>
+
+</form>
+</body>
+</html>

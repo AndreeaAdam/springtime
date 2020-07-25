@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Owners list</title>
+</head>
+<body>
+<p th:text="'Here is my ' + ${owners.size() + 'owners list:'}"> </p>
+<a href="/owners/add"> Add an owner</a>
+
+<table border="1">
+    <thead>
+    <th>Id</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>Telephone</th>
+    </thead>
+    <tbody>
+    <tr th:each="owner: ${owners}">
+        <td th:text="${owner.getId()}"></td>
+        <td th:text="${owner.getFirstName()}"></td>
+        <td th:text="${owner.getLastName()}"></td>
+        <td th:text="${owner.getAddress()}"></td>
+        <td th:text="${owner.getCity()}"></td>
+        <td th:text="${owner.getTelephon()}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
